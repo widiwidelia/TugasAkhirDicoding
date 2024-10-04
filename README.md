@@ -1,13 +1,14 @@
 # Buka command prompt dan install library menggunakan code berikut
-`import numpy as np`
 
-`import pandas as pd`
+`pip install numpy`
 
-`import matplotlib.pyplot as plt`
+`pip install pandas`
 
-`import seaborn as sns`
+`pip install matplotlib`
+
+`pip install seaborn`
 
 # Buka command prompt di directory lokasi notebook
 masukkan command berikut
 
-`streamlit run dashboard/dashboard.py`
+`streamlit run Dashboard/Dashboard.py`
