@@ -7,8 +7,8 @@ import matplotlib.pyplot as plt
 st.title('Dashboard Penyewaan Sepeda')
 st.caption('Angela Sekar Widelia ML-65')
 
-hour_df = pd.read_csv('../Data/hour.csv')  
-day_df = pd.read_csv('../Data/day.csv')  
+hour_df = pd.read_csv('Data/hour.csv')  
+day_df = pd.read_csv('Data/day.csv')  
 hour_df['dteday'] = pd.to_datetime(hour_df['dteday'])
 hour_df['weekday'] = hour_df['dteday'].dt.weekday
 
