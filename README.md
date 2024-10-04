@@ -8,7 +8,7 @@
 
 `pip install seaborn`
 
-# Buka command prompt di directory lokasi notebook
-masukkan command berikut
+# Buka command prompt untuk membuka dashboard
+masukkan command berikut pada directory project
 
 `streamlit run Dashboard/Dashboard.py`

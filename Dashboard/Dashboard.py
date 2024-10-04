@@ -1,4 +1,5 @@
 import streamlit as st
+
 import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
@@ -6,12 +7,13 @@ import matplotlib.pyplot as plt
 st.title('Dashboard Penyewaan Sepeda')
 st.caption('Angela Sekar Widelia ML-65')
 
-hour_df = pd.read_csv('Dashboard/hour.csv')  
+hour_df = pd.read_csv('../Data/hour.csv')  
+day_df = pd.read_csv('../Data/day.csv')  
 hour_df['dteday'] = pd.to_datetime(hour_df['dteday'])
 hour_df['weekday'] = hour_df['dteday'].dt.weekday
 
 # Pertanyaan 1
-by_hour = hour_df.groupby(by="hr").agg({
+by_hour = hour_df.groupby("hr").agg({
     "cnt": ["sum","mean"],
     "registered": ["sum","mean"],
     "casual" : ["sum","mean"]
@@ -29,7 +31,7 @@ st.pyplot(fig)
 st.caption('Jam dengan penyewaan tertinggi adalah jam 17.00, dengan jumlah penyewaan mencapai 336860.')
 
 # Pertanyaan 2
-by_day = hour_df.groupby('weekday')['cnt'].sum().reset_index()
+by_day = day_df.groupby('weekday')['cnt'].sum().reset_index()
 by_day['weekday'] = by_day['weekday'].map({
     0: 'Sunday',
     1: 'Monday',
